@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="namesApp">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Projects a Plenty</title>
+  <!-- jquery --> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <!-- angular js -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+  <script src="app.js"></script>
+  
+</head>
+<body>
+  <div class="container" ng-controller="namesController as names">
+    <div class="jumbotron"><p>Project Name:...</p>
+      <h1 class="text-uppercase">{{names.project}}</h1>
+    </div>
+
+    <div class="page-header">
+      <h1>Passwords Galore</h1>
+
+      <p> Edit either of the lists of words to change what's in our possible project name space. Click to choose from thousands ({{ names.adjectives.length * names.nouns.length | number}}) of projects generated using {{ names.adjectives.length }} adjectives and {{names.nouns.length}} nouns </p>
+      <p class="bg-info">You can go ahead and type more adjectives and nouns in - it's all editable!</p>
+<button type="button" class="btn btn-primary btn-lg btn-block" ng-click="names.newProject()">Make a new Project Name</button>
+    </div>
+    <div class="col-md-6">
+      <h2>Adjectives <small class="text-info">Go ahead and edit me</small></h2>
+      <textarea id="adjectives-textarea" type="text" rows=40 name="" ng-model="names.adjectives" split-array>
+      </textarea>
+    </div>
+    <div class="col-md-6">
+      <h2>Nouns <small class="text-info">Go ahead and edit me</small></h2>
+      <textarea id="nouns-textarea" type="text" rows=40 name="" ng-model="names.nouns" split-array>
+      </textarea>
+      <input id="nouns-text" type="text" name="">
+    </div>
+  </div>
+</body>
+</html>
